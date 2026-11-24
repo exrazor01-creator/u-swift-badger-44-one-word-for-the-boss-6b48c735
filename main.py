@@ -20,6 +20,8 @@ def _check(text, limit):
     for bad in (" ", "\n", "\r", "\t"):
         if bad in text:
             raise ValueError("entry must be exactly one word, no spaces")
+    if not text.isalpha():
+        raise ValueError("entry must be a single word of letters")
     return text
 
 
